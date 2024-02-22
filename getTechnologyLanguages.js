@@ -1,7 +1,9 @@
 const puppeteer = require("puppeteer");
 
 const getTechnologyLanguages = async (technologyName) => {
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({
+		headless: true,
+	});
 	const page = await browser.newPage();
 	await page.goto("https://www.metasquaretech.com");
 	const technology = `${technologyName} Technologies`;

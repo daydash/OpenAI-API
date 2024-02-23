@@ -2,6 +2,8 @@ const puppeteer = require("puppeteer");
 
 const getTechnologyLanguages = async (technologyName) => {
 	const browser = await puppeteer.launch({
+		args: ["--no-sandbox"],
+		// executablePath: path.resolve(__dirname, "../../bin/chromium-browser"),
 		headless: true,
 	});
 	const page = await browser.newPage();
